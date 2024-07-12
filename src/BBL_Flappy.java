@@ -17,11 +17,8 @@ public class BBL_Flappy extends JPanel implements ActionListener, KeyListener{
         //Bird
         int birdX = boardWidth/8;
         int birdY = boardHeight/2;
-        int birdWidth = 34;
-        int birdHeight = 24;
-
-
-
+        int birdWidth = 44;
+        int birdHeight = 34;
 
         class Bird{
                 int x = birdX;
@@ -104,7 +101,7 @@ public class BBL_Flappy extends JPanel implements ActionListener, KeyListener{
                 //gives value between 0 and 1, multiplies by half of pipeHeight
 
                 int randomPipeY = (int)(pipeY-pipeHeight/4-Math.random()*(pipeHeight/2));
-                int openingSpace = boardHeight/4;
+                int openingSpace = boardHeight/3;
 
                 Pipe topPipe = new Pipe(topPipeImage);
                 topPipe.y = randomPipeY;
@@ -170,7 +167,6 @@ public class BBL_Flappy extends JPanel implements ActionListener, KeyListener{
                 }
         }
 
-
         public boolean collision(Bird a, Pipe b){
                 return a.x<b.x + b.width && //a's top left corner doesn't reach b's top right corner
                 a.x + a.width > b.x && //a's top right corner passes b's top left corner
@@ -187,8 +183,6 @@ public class BBL_Flappy extends JPanel implements ActionListener, KeyListener{
                         gameLoop.stop();
                 }
         }
-
-
 
         @Override
         public void keyPressed(KeyEvent e) {
