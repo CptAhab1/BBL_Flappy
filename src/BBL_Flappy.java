@@ -61,6 +61,8 @@ public class BBL_Flappy extends JPanel implements ActionListener, KeyListener{
         Random random = new Random();
         Timer gameLoop;
         Timer placePipesTimer;
+
+        //Timer musicTimer;
         boolean gameOver = false;
         double score = 0;
 
@@ -94,6 +96,9 @@ public class BBL_Flappy extends JPanel implements ActionListener, KeyListener{
                 //game timer
                 gameLoop = new Timer(1000/60,this);
                 gameLoop.start();
+
+                /* musicTimer = new Timer(0, this);
+                musicTimer.start(SoundHandler.PlayMusic("src/NotLikeUs.wav")); */
 
         }
 
@@ -181,6 +186,7 @@ public class BBL_Flappy extends JPanel implements ActionListener, KeyListener{
                 if(gameOver){
                         placePipesTimer.stop();
                         gameLoop.stop();
+                        //musicTimer.stop();
                 }
         }
 
@@ -197,9 +203,9 @@ public class BBL_Flappy extends JPanel implements ActionListener, KeyListener{
                                 gameOver = false;
                                 gameLoop.start();
                                 placePipesTimer.start();
+                                //SoundHandler.StopMusic("src/NotLikeUs.wav");
                         }
                 }
-
         }
 
         @Override
@@ -211,4 +217,6 @@ public class BBL_Flappy extends JPanel implements ActionListener, KeyListener{
         public void keyReleased(KeyEvent e) {
 
         }
+
+
 }

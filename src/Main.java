@@ -11,6 +11,7 @@ public class Main {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        SoundHandler.PlayMusic("src/NotLikeUs.wav");
 
         BBL_Flappy flappy = new BBL_Flappy();
         frame.add(flappy);
