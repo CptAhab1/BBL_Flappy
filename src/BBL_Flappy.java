@@ -103,7 +103,7 @@ public class BBL_Flappy extends JPanel implements ActionListener, KeyListener{
                 gameLoop.start();
 
                 LoadMusic();
-                playMusic("NotLikeUs");
+                playMusic("BBLDrizzy");
 
         }
 
@@ -169,13 +169,15 @@ public class BBL_Flappy extends JPanel implements ActionListener, KeyListener{
 
                         if (collision(bird, pipe)){
                                 gameOver = true;
-                                stopMusic("NotLikeUs");
+                                stopMusic("BBLDrizzy");
+                                playMusic("AAAH");
                         }
                 }
 
                 if (bird.y>boardHeight){
                         gameOver = true;
-                        stopMusic("NotLikeUs");
+                        stopMusic("BBLDrizzy");
+                        playMusic("AAAH");
                 }
         }
 
@@ -210,7 +212,7 @@ public class BBL_Flappy extends JPanel implements ActionListener, KeyListener{
                                 gameLoop.start();
                                 placePipesTimer.start();
                                 LoadMusic();
-                                playMusic("NotLikeUs");
+                                playMusic("BBLDrizzy");
                         }
                 }
         }
@@ -227,7 +229,8 @@ public class BBL_Flappy extends JPanel implements ActionListener, KeyListener{
 
         public HashMap<String, Clip> musicMap = new HashMap<String, Clip>();
         public void LoadMusic(){
-                musicMap.put("NotLikeUs", generateClip("src/NotLikeUs.wav"));
+                musicMap.put("BBLDrizzy", generateClip("src/BBLDrizzy.wav"));
+                musicMap.put("AAAH", generateClip("src/AAAH.wav"));
         }
 
         public Clip generateClip(String soundPath){
